@@ -20,15 +20,14 @@
 <body>
   <div class="wrap">
     <header class="topbar">
-      <div class="brand"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 27S4 20 4 12a7 7 0 0 1 12-5 7 7 0 0 1 12 5c0 8-12 15-12 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>A Little Breather</div>
-      <span class="smallcap">a little something from me</span>
+      <div class="brand"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M18 3 6 18h8l-2 11 14-17h-8l0-9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>A Little Breather</div>
     </header>
     <main>
       <section class="hero" aria-labelledby="welcome">
         <div class="eyebrow"><span class="dot"></span>A little something to make today easier.</div>
         <h1 id="welcome"><span id="greeting">Long day?</span><br>Fuck today.<br><em>Take a breather.</em></h1>
         <p>Thought you could use a small break and a reason to smile. So I made you a little something. Take a minute. The damn day can wait.</p>
-        <svg class="hero-art" viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="M80 124S29 95 29 61c0-27 36-37 51-12 15-25 51-15 51 12 0 34-51 63-51 63Z" fill="#eeded2" stroke="#a87d63" stroke-width="1.7"/><path d="M53 57c-8 3-11 8-11 15" stroke="#fffaf4" stroke-width="3" stroke-linecap="round"/><path d="M138 21v15m-7-8h15M20 109v12m-6-6h12" stroke="#a87d63" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <svg class="hero-art" viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="m91 20-54 68h37l-8 53 58-78H87l4-43Z" fill="#eeded2" stroke="#a87d63" stroke-width="1.7" stroke-linejoin="round"/><path d="M138 21v15m-7-8h15M20 109v12m-6-6h12" stroke="#a87d63" stroke-width="1.4" stroke-linecap="round"/></svg>
       </section>
       <noscript><p class="noscript">A small reminder: you don’t have to finish everything today to deserve a little rest. Enable JavaScript for the timer and little extras.</p></noscript>
       <div class="layout">
@@ -50,12 +49,12 @@
             <button class="textbutton" id="anotherButton" type="button">Something else <span aria-hidden="true">↗</span></button>
           </section>
           <section class="note-card" aria-labelledby="note-title">
-            <div class="note-top"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16s-7-4-7-8a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4-7 8-7 8Z" stroke="currentColor" stroke-width="1.2"/></svg>a little note for you</div>
+            <div class="note-top"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m11 2-8 10h6l-1 6 9-11h-6V2Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>a little note for you</div>
             <h2 id="note-title">In case you forgot…</h2>
-            <button class="note-button" id="noteButton" type="button" aria-expanded="false" aria-controls="noteContent">Open your note <span aria-hidden="true">♡</span></button>
+            <button class="note-button" id="noteButton" type="button" aria-expanded="false" aria-controls="noteContent">Open your note <span aria-hidden="true">⚡</span></button>
             <div id="noteContent" hidden><p class="note-text" id="noteText">Just a quick reminder: you’re beautiful, you’re a badass, and you’re allowed to be absolutely fucking done with today.
 
-Even the main character needs a snack and a horizontal intermission. Get comfortable. The bullshit can wait.</p><p class="note-end">No need to reply. Just a little something to brighten your day. ♡</p></div>
+Even the main character needs a snack and a horizontal intermission. Get comfortable. The bullshit can wait.</p><p class="note-end">No need to reply. Just a little something to brighten your day. ⚡</p></div>
           </section>
         </div>
       </div>
@@ -63,7 +62,7 @@ Even the main character needs a snack and a horizontal intermission. Get comfort
       <footer class="footer"><span>Made for you. Thinking about you.</span><button id="personalizeButton" type="button" aria-expanded="false" aria-controls="personalizePanel">Make this hers ↗</button></footer>
       <section class="personalize" id="personalizePanel" hidden aria-labelledby="personalize-title">
         <h2 id="personalize-title">Make it sound like you.</h2><p>Add her name and a note she’ll recognize as yours.</p>
-        <form id="personalizeForm"><label class="field"><span>Her first name</span><input id="nameInput" maxlength="40" placeholder="Optional" autocomplete="off"></label><label class="field"><span>Your message to her</span><textarea id="noteInput" maxlength="400" placeholder="Thought you could use a little pick-me-up today. Made this for you. ♡"></textarea></label><button class="primary" type="submit">Make her link <span aria-hidden="true">↗</span></button></form>
+        <form id="personalizeForm"><label class="field"><span>Her first name</span><input id="nameInput" maxlength="40" placeholder="Optional" autocomplete="off"></label><label class="field"><span>Your message to her</span><textarea id="noteInput" maxlength="400" placeholder="Thought you could use a little pick-me-up today. Made this for you. ⚡"></textarea></label><button class="primary" type="submit">Make her link <span aria-hidden="true">↗</span></button></form>
         <p class="share-status" id="shareStatus" role="status"></p><label id="linkLabel" hidden><span class="sr-only">Link to send her</span><input class="linkout" id="linkOutput" readonly></label><button class="quiet" type="button" id="shareButton" hidden>Share link</button><p class="sender-help">The name and note travel in the link. Anyone you forward it to can read them.</p>
       </section>
     </main>
@@ -117,7 +116,7 @@ Even the main character needs a snack and a horizontal intermission. Get comfort
       const opened = el('noteContent').hidden;
       el('noteContent').hidden = !opened;
       el('noteButton').setAttribute('aria-expanded', String(opened));
-      el('noteButton').textContent = opened ? 'Tuck it away ♡' : 'Open your note ♡';
+      el('noteButton').textContent = opened ? 'Tuck it away ⚡' : 'Open your note ⚡';
       if (opened) el('noteContent').classList.add('fade-in');
     });
     let elapsed = 0, startedAt = 0, running = false, tickId = null;
@@ -224,7 +223,7 @@ Even the main character needs a snack and a horizontal intermission. Get comfort
     el('shareButton').addEventListener('click', async () => {
       if (!shareUrl) return;
       if (navigator.share) {
-        try {await navigator.share({title:'A little breather for you',text:'Made you a little something for a long day. ♡',url:shareUrl});el('shareStatus').textContent = 'A little encouragement, sent her way.';}
+        try {await navigator.share({title:'A little breather for you',text:'Made you a little something for a long day. ⚡',url:shareUrl});el('shareStatus').textContent = 'A little encouragement, sent her way.';}
         catch (error) {if (error.name !== 'AbortError') el('shareStatus').textContent = 'Select the link above and copy it to your message.';}
       } else {
         try {if (!navigator.clipboard) throw new Error('Manual copy');await navigator.clipboard.writeText(shareUrl);el('shareStatus').textContent = 'Copied! Paste it into your message.';}
