@@ -44,8 +44,8 @@
         <div class="right">
           <section class="mood-panel" aria-labelledby="mood-title">
             <h2 id="mood-title">What do you need right now?</h2><p class="sub">A little quiet? A little encouragement? I’ve got a few ideas.</p>
-            <div class="moods" role="group" aria-label="How are you feeling?"><button class="mood" data-mood="worn" aria-pressed="true" type="button"><span aria-hidden="true">☁</span> I’m exhausted</button><button class="mood" data-mood="busy" aria-pressed="false" type="button"><span aria-hidden="true">◌</span> Can’t switch off</button><button class="mood" data-mood="smile" aria-pressed="false" type="button"><span aria-hidden="true">☀</span> Make me smile</button></div>
-            <div class="suggestion" aria-live="polite"><p class="suggestion-label">one tiny thing</p><h3 id="suggestionTitle">Go get comfortable.</h3><p id="suggestionText">Put on your comfy clothes, grab something you like to drink, and take five minutes for yourself. No agenda. No catching up. Just a little break.</p></div>
+            <div class="moods" role="group" aria-label="How are you feeling?"><button class="mood" data-mood="worn" aria-pressed="true" type="button"><span aria-hidden="true">☁</span> I’m exhausted</button><button class="mood" data-mood="busy" aria-pressed="false" type="button"><span aria-hidden="true">◌</span> Can’t switch off</button><button class="mood" data-mood="smile" aria-pressed="false" type="button"><span aria-hidden="true">☀</span> Make me smile</button><button class="mood" data-mood="hype" aria-pressed="false" type="button"><span aria-hidden="true">⚡</span> Hype me up</button></div>
+            <div class="suggestion" aria-live="polite"><p class="suggestion-label" id="suggestionLabel">one tiny thing</p><h3 id="suggestionTitle">Go get comfortable.</h3><p id="suggestionText">Put on your comfy clothes, grab something you like to drink, and take five minutes for yourself. No agenda. No catching up. Just a little break.</p></div>
             <button class="textbutton" id="anotherButton" type="button">Something else <span aria-hidden="true">↗</span></button>
           </section>
           <section class="note-card" aria-labelledby="note-title">
@@ -84,6 +84,48 @@ Even the main character needs a snack and a horizontal intermission. Get comfort
         ['One tab at a time.', 'If your brain has 37 tabs open, choose just one tiny next step. The other 36 can shut the hell up for a minute.'],
         ['A little quiet is allowed.', 'Turn on Do Not Disturb for ten minutes if you can. You’re allowed to be temporarily unavailable.']
       ],
+      hype: [
+        [
+          "I am a fucking badass.",
+          "I can be tired, overwhelmed, or having a rough day and still be strong. Those things can exist together."
+        ],
+        [
+          "I don’t have to earn a damn break.",
+          "Rest is a need. I’m allowed to put things down before I run myself into the ground."
+        ],
+        [
+          "I am beautiful, even on low battery.",
+          "Messy hair, comfy clothes, long day. I’m still me. I don’t have to look put together to be worth caring about."
+        ],
+        [
+          "I can take this shit one step at a time.",
+          "I don’t need a plan for my entire life tonight. One small, doable next step is enough."
+        ],
+        [
+          "I deserve the kindness I give other people.",
+          "I can speak to myself like someone I care about. I deserve patience on the hard days, too."
+        ],
+        [
+          "I am allowed to say no to more bullshit.",
+          "My time and energy matter. A reasonable boundary doesn’t need a twenty-slide presentation."
+        ],
+        [
+          "I have handled hard days before.",
+          "I can give myself credit for what I’ve already carried. I can ask for help with what comes next."
+        ],
+        [
+          "I can be proud of my damn self.",
+          "My effort counts, including the quiet work nobody sees. I’m allowed to notice what I did well today."
+        ],
+        [
+          "I don’t have to have it all figured out.",
+          "Being a work in progress doesn’t make me a failure. I can learn, change my mind, and try again."
+        ],
+        [
+          "I am enough, even when today is a fucking mess.",
+          "My worth doesn’t rise and fall with my to-do list. Tonight, I’m allowed to eat, breathe, rest, and just be."
+        ]
+      ],
       smile: [
         ['A badass on low battery.', 'You’re a badass on 3% battery. Most people need a full charge just to answer one fucking email.'],
         ['Your official job title.', 'Chief Executive of Getting Shit Done. The office is now closed. Please direct all bullshit to tomorrow.'],
@@ -97,9 +139,11 @@ Even the main character needs a snack and a horizontal intermission. Get comfort
       ]
     };
     let mood = 'worn';
-    const indices = {worn:0,busy:0,smile:0};
+    const indices = {worn:0,busy:0,smile:0,hype:0};
     function updateSuggestion() {
       const [title, message] = suggestions[mood][indices[mood]];
+      el('suggestionLabel').textContent = mood === 'hype' ? 'say it to yourself' : 'one tiny thing';
+      el('anotherButton').textContent = mood === 'hype' ? 'Another affirmation ↗' : 'Something else ↗';
       el('suggestionTitle').textContent = title;
       el('suggestionText').textContent = message;
     }
